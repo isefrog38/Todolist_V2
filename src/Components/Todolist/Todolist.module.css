@@ -1,0 +1,12 @@
+.main_paper_div {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.block_name_and_delete {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
