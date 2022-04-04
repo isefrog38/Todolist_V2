@@ -35,12 +35,12 @@ function App() {
 
     return (
         <div className="App">
-            <AppBar position={"fixed"} color={"secondary"} style={{height: "100px"}}>
+            <AppBar position={"static"} color={"secondary"} style={{height: "100px"}}>
                 <Toolbar>
                     <AddItemForm addItem={addTodolist}/>
                 </Toolbar>
             </AppBar>
-            <Container fixed style={{margin: "100px auto"}}>
+            <Container fixed>
                 <Grid container style={{padding: '20px'}}>
                 </Grid>
                 <Grid container spacing={7}>

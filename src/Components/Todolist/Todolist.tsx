@@ -8,7 +8,6 @@ import {Task} from '../Task/Task'
 import {TaskStatuses, TaskType} from '../../api/todolists-api'
 import {FilterValuesType} from '../../state/todolists-reducer'
 import {Buttons} from "../Buttons/Buttons";
-import {changeTaskTitleAC} from "../../state/tasks-reducer";
 import {useDispatch} from "react-redux";
 import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
 import {createTaskTC, getTasksTC, removeTaskTC, updateTaskTC} from "../../Thunk/Task-thunk";
