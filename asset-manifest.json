@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/isefrog38/New_Todolist_My_version/static/css/main.a093fdbc.chunk.css",
-    "main.js": "/isefrog38/New_Todolist_My_version/static/js/main.57e2b647.chunk.js",
-    "main.js.map": "/isefrog38/New_Todolist_My_version/static/js/main.57e2b647.chunk.js.map",
-    "runtime-main.js": "/isefrog38/New_Todolist_My_version/static/js/runtime-main.708e7f60.js",
-    "runtime-main.js.map": "/isefrog38/New_Todolist_My_version/static/js/runtime-main.708e7f60.js.map",
-    "static/js/2.95c70c4d.chunk.js": "/isefrog38/New_Todolist_My_version/static/js/2.95c70c4d.chunk.js",
-    "static/js/2.95c70c4d.chunk.js.map": "/isefrog38/New_Todolist_My_version/static/js/2.95c70c4d.chunk.js.map",
-    "static/js/3.66eeb16f.chunk.js": "/isefrog38/New_Todolist_My_version/static/js/3.66eeb16f.chunk.js",
-    "static/js/3.66eeb16f.chunk.js.map": "/isefrog38/New_Todolist_My_version/static/js/3.66eeb16f.chunk.js.map",
+    "main.css": "/isefrog38/New_Todolist_My_version/static/css/main.3dd49974.chunk.css",
+    "main.js": "/isefrog38/New_Todolist_My_version/static/js/main.1dca3c8d.chunk.js",
+    "main.js.map": "/isefrog38/New_Todolist_My_version/static/js/main.1dca3c8d.chunk.js.map",
+    "runtime-main.js": "/isefrog38/New_Todolist_My_version/static/js/runtime-main.4d967642.js",
+    "runtime-main.js.map": "/isefrog38/New_Todolist_My_version/static/js/runtime-main.4d967642.js.map",
+    "static/js/2.c7741a91.chunk.js": "/isefrog38/New_Todolist_My_version/static/js/2.c7741a91.chunk.js",
+    "static/js/2.c7741a91.chunk.js.map": "/isefrog38/New_Todolist_My_version/static/js/2.c7741a91.chunk.js.map",
+    "static/js/3.bef9598f.chunk.js": "/isefrog38/New_Todolist_My_version/static/js/3.bef9598f.chunk.js",
+    "static/js/3.bef9598f.chunk.js.map": "/isefrog38/New_Todolist_My_version/static/js/3.bef9598f.chunk.js.map",
     "index.html": "/isefrog38/New_Todolist_My_version/index.html",
-    "static/css/main.a093fdbc.chunk.css.map": "/isefrog38/New_Todolist_My_version/static/css/main.a093fdbc.chunk.css.map",
-    "static/js/2.95c70c4d.chunk.js.LICENSE.txt": "/isefrog38/New_Todolist_My_version/static/js/2.95c70c4d.chunk.js.LICENSE.txt",
+    "static/css/main.3dd49974.chunk.css.map": "/isefrog38/New_Todolist_My_version/static/css/main.3dd49974.chunk.css.map",
+    "static/js/2.c7741a91.chunk.js.LICENSE.txt": "/isefrog38/New_Todolist_My_version/static/js/2.c7741a91.chunk.js.LICENSE.txt",
     "static/media/App.css": "/isefrog38/New_Todolist_My_version/static/media/12.72513392.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.708e7f60.js",
-    "static/js/2.95c70c4d.chunk.js",
-    "static/css/main.a093fdbc.chunk.css",
-    "static/js/main.57e2b647.chunk.js"
+    "static/js/runtime-main.4d967642.js",
+    "static/js/2.c7741a91.chunk.js",
+    "static/css/main.3dd49974.chunk.css",
+    "static/js/main.1dca3c8d.chunk.js"
   ]
 }
