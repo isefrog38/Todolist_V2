@@ -1,5 +1,5 @@
 import { v1 } from 'uuid';
-import { TodolistType } from '../api/todolists-api'
+import { TodolistType } from '../api/todolists-api';
 
 export type SetTodolistsActionType = {
     type: 'SET-TODOLISTS'
@@ -25,7 +25,7 @@ export type ChangeTodolistFilterActionType = {
     filter: FilterValuesType
 }
 
-type ActionsType = SetTodolistsActionType
+export type TodolistsActionsType = SetTodolistsActionType
     | RemoveTodolistActionType
     | AddTodolistActionType
     | ChangeTodolistTitleActionType
@@ -41,7 +41,7 @@ export type TodolistDomainType = TodolistType & {
     filter: FilterValuesType
 }
 
-export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: ActionsType): Array<TodolistDomainType> => {
+export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: TodolistsActionsType): Array<TodolistDomainType> => {
     switch (action.type) {
         case 'SET-TODOLISTS': {
             return action.todolists.map(tl => ({
