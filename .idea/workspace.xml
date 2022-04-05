@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +99,7 @@
       <workItem from="1649078048028" duration="57000" />
       <workItem from="1649079534356" duration="17425000" />
       <workItem from="1649098282247" duration="153000" />
-      <workItem from="1649156723737" duration="1094000" />
+      <workItem from="1649156723737" duration="2148000" />
     </task>
     <servers />
   </component>

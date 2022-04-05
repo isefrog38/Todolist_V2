@@ -1,38 +1,29 @@
-import {Dispatch} from "redux";
 import {todolistsAPI} from "../api/todolists-api";
 import {addTodolistAC, changeTodolistTitleAC, removeTodolistAC, setTodolistsAC} from "../state/todolists-reducer";
-import {AppGlobalActionsType, AppThunk} from "../state/store";
+import {AppThunk} from "../state/store";
 
-export const getTodolistsTC = (): AppThunk => (dispatch) => {
-    return todolistsAPI.getTodolists()
-        .then(response => {
-            dispatch(setTodolistsAC(response.data));
-        });
+export const getTodolistsTC = (): AppThunk => async dispatch => {
+    const response = await todolistsAPI.getTodolists();
+    dispatch(setTodolistsAC(response.data));
 }
 
-export const updateTodolistTC = (todolistId: string, title: string): AppThunk => (dispatch) => {
-    return todolistsAPI.updateTodolist(todolistId, title)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(changeTodolistTitleAC(todolistId, title));
-            }
-        });
+export const updateTodolistTC = (todolistId: string, title: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.updateTodolist(todolistId, title);
+    if (response.data.resultCode === 0) {
+        dispatch(changeTodolistTitleAC(todolistId, title));
+    }
 }
 
-export const removeTodolistTC = (todolistId: string): AppThunk => (dispatch) => {
-    return todolistsAPI.deleteTodolist(todolistId)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(removeTodolistAC(todolistId))
-            }
-        });
+export const removeTodolistTC = (todolistId: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.deleteTodolist(todolistId);
+    if (response.data.resultCode === 0) {
+        dispatch(removeTodolistAC(todolistId));
+    }
 }
 
-export const createTodolistTC = (title: string): AppThunk => (dispatch) => {
-    return todolistsAPI.createTodolist(title)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(addTodolistAC(title));
-            }
-        });
+export const createTodolistTC = (title: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.createTodolist(title);
+    if (response.data.resultCode === 0) {
+        dispatch(addTodolistAC(title));
+    }
 }

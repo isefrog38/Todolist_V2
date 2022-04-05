@@ -1,13 +1,10 @@
-import {Dispatch} from "redux";
 import {todolistsAPI, UpdateTaskModelType} from "../api/todolists-api";
 import {addTaskAC, removeTaskAC, setTasksAC, updateTaskAC} from "../state/tasks-reducer";
-import {AppGlobalActionsType, AppRootStateType, AppThunk} from "../state/store";
+import {AppRootStateType, AppThunk} from "../state/store";
 
-export const getTasksTC = (todolistId: string): AppThunk => (dispatch) => {
-    return todolistsAPI.getTasks(todolistId)
-        .then(response => {
-            dispatch(setTasksAC(response.data.items, todolistId));
-        });
+export const getTasksTC = (todolistId: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.getTasks(todolistId);
+    dispatch(setTasksAC(response.data.items, todolistId));
 }
 
 export const updateTaskTC = (todolistId: string, taskId: string, domainModel: UpdateTaskModelType): AppThunk =>
@@ -36,20 +33,16 @@ export const updateTaskTC = (todolistId: string, taskId: string, domainModel: Up
     }
 
 
-export const removeTaskTC = (todolistId: string, taskId: string): AppThunk => (dispatch) => {
-    return todolistsAPI.deleteTask(todolistId, taskId)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(removeTaskAC(taskId, todolistId))
-            }
-        });
+export const removeTaskTC = (todolistId: string, taskId: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.deleteTask(todolistId, taskId);
+    if (response.data.resultCode === 0) {
+        dispatch(removeTaskAC(taskId, todolistId))
+    }
 }
 
-export const createTaskTC = (todolistId: string, title: string): AppThunk => (dispatch) => {
-    return todolistsAPI.createTask(todolistId, title)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(addTaskAC(todolistId, response.data.data.item));
-            }
-        });
+export const createTaskTC = (todolistId: string, title: string): AppThunk => async dispatch => {
+    const response = await todolistsAPI.createTask(todolistId, title);
+    if (response.data.resultCode === 0) {
+        dispatch(addTaskAC(todolistId, response.data.data.item));
+    }
 }
