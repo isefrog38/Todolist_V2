@@ -29,44 +29,25 @@ export const tasksReducer = (state: TasksStateType = initialState, action: TaskA
             })
             return stateCopy;
         }
-        case 'SET-TASKS': {
-            return {
-                ...state,
-                [action.todolistId]: action.tasks
-            }
-        }
-        case 'REMOVE-TASK': {
-            const stateCopy = {...state}
-            const tasks = stateCopy[action.todolistId];
-            const newTasks = tasks.filter(t => t.id !== action.taskId);
-            stateCopy[action.todolistId] = newTasks;
-            return stateCopy;
-        }
-        case 'ADD-TASK': {
-            const stateCopy = {...state}
-            const tasks = stateCopy[action.task.todoListId];
-            const newTasks = [action.task, ...tasks];
-            stateCopy[action.task.todoListId] = newTasks;
-            return stateCopy;
-        }
-        case 'UPDATE-TASK': {
-            let todolistTasks = state[action.todolistId];
-            let newTasksArray = todolistTasks
-                .map(t => t.id === action.taskId ? {...t, ...action.model} : t);
-
-            state[action.todolistId] = newTasksArray;
-            return ({...state});
-        }
         case 'ADD-TODOLIST': {
-            return {
-                ...state,
-                [action.todolistId]: []
-            }
+            return {...state, [action.todolistId]: []}
         }
         case 'REMOVE-TODOLIST': {
             const copyState = {...state};
             delete copyState[action.id];
             return copyState;
+        }
+        case 'SET-TASKS': {
+            return {...state, [action.todolistId]: action.tasks}
+        }
+        case 'REMOVE-TASK': {
+            return {...state, [action.todolistId]: state[action.todolistId].filter(t => t.id !== action.taskId)};
+        }
+        case 'ADD-TASK': {
+            return {...state, [action.task.todoListId]: [action.task, ...state[action.task.todoListId]]};
+        }
+        case 'UPDATE-TASK': {
+            return {...state, [action.todolistId]: state[action.todolistId].map(t => t.id === action.taskId ? {...t, ...action.model} : t)};
         }
         default:
             return state;
