@@ -24,6 +24,6 @@ export const removeTodolistTC = (todolistId: string): AppThunk => async dispatch
 export const createTodolistTC = (title: string): AppThunk => async dispatch => {
     const response = await todolistsAPI.createTodolist(title);
     if (response.data.resultCode === 0) {
-        dispatch(addTodolistAC(title));
+        dispatch(addTodolistAC(title, response.data.data.item.id));
     }
 }
