@@ -1,0 +1,169 @@
+.form_3 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    width: 400px;
+    margin: 60px auto 30px;
+    padding: 20px 50px;
+    overflow: hidden;
+    background: #4f4f4f;
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: inset 0 0 2px 1px rgba(255,255,255,0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.form_3 label {
+    width: 100%;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    color: #ddd;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 10px;
+    font-weight: 700;
+}
+
+.form_3 input[type=text],
+.form_3 input[type=password],
+.form_3 input[type=email] {
+    width: 97%;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    background: linear-gradient(#2c2e34, #27292c);
+    border: 1px solid #000;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+}
+
+.form_3 input[type=text]:hover,
+.form_3 input[type=password]:hover,
+.form_3 label:hover ~ input[type=text],
+.form_3 label:hover ~ input[type=password]{
+    background: #27292c;
+}
+
+.form_3 input[type=text]:focus,
+.form_3 input[type=password]:focus {
+    box-shadow: inset 0 0 2px #000;
+    background: #494d54;
+    border-color: #ffffff;
+    outline: none;
+}
+
+.form_3 p:nth-child(4){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.form_3 label[for=remember] {
+    width: auto;
+    float: none;
+    display: inline-block;
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-indent: 2px;
+}
+
+.form_3 input[type=checkbox] {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.button {
+    width: 100%;
+    padding: 8px 5px;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background: rgba(199, 199, 199, 0.5);
+    cursor:pointer;
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.button:hover {
+    box-shadow: 2px 2px 30px rgb(255, 255, 255), -2px -2px 30px rgb(255, 255, 255);
+}
+.button:disabled {
+    opacity: 0.40;
+    cursor: no-drop;
+}
+
+.button:active {
+    color: #ffffff;
+    background: rgba(232, 232, 232, 0.77);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255), -2px -2px 30px rgb(255, 255, 255);
+    border-color: #000;
+    border-color: rgba(0,0,0,0.9);
+}
+
+.label_rememberMe_block {
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 50%;
+    margin-right: 80px;
+}
+
+
+@media (min-width: 50px) and (max-width: 1000px) {
+    .form_3 {
+        width: 250px;
+    }
+    .label_rememberMe_block {
+        margin-right: 20px;
+    }
+}
+
+.clearfix {
+    display: flex;
+    flex-direction: column;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.text_helper {
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 310px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 0;
+    border: 1px solid;
+    left: 1220px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.angle {
+    top: 99px;
+    left: -25px;
+    margin: 0;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0) 15px, #e8e8e8 0);
+}
+
+.text_helper_small_text {
+    font-weight: 500;
+    font-size: 1rem;
+}

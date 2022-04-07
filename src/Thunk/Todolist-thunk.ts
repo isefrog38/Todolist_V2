@@ -1,6 +1,6 @@
 import {todolistsAPI} from "../api/todolists-api";
-import {addTodolistAC, changeTodolistTitleAC, removeTodolistAC, setTodolistsAC} from "../state/todolists-reducer";
-import {AppThunk} from "../state/store";
+import {addTodolistAC, changeTodolistTitleAC, removeTodolistAC, setTodolistsAC} from "../Redux/todolists-reducer";
+import {AppThunk} from "../Redux/store";
 
 export const getTodolistsTC = (): AppThunk => async dispatch => {
     const response = await todolistsAPI.getTodolists();

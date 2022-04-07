@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {useDispatch} from "react-redux";
 import {CleanButton} from "./Button";
-import {changeTodolistFilterAC, FilterValuesType} from "../../state/todolists-reducer";
+import {changeTodolistFilterAC, FilterValuesType} from "../../Redux/todolists-reducer";
 
 type ButtonsType = {
     todolistId: string

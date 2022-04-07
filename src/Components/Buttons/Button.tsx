@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from "@mui/material";
-import {FilterValuesType} from "../../state/todolists-reducer";
+import {FilterValuesType} from "../../Redux/todolists-reducer";
 
 type ButtonPropsType = {
     title: string

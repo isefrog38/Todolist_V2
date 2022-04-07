@@ -35,7 +35,7 @@ export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
     }
 
     return (
-        <div style={{margin: "20px 50px"}}>
+        <div style={{display: "flex"}}>
             <TextField
                 variant="outlined"
                 error={!!error}

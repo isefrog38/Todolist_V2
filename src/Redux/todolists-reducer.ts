@@ -15,9 +15,8 @@ export type TodolistsActionsType =
     | ReturnType<typeof changeTodolistTitleAC>
 
 const initialState: Array<TodolistDomainType> = [
-    /*{id: todolistId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0},
-    {id: todolistId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0}*/
-]
+    /*{id: todolistId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0}*/
+];
 
 export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: TodolistsActionsType): Array<TodolistDomainType> => {
     switch (action.type) {

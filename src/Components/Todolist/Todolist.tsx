@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { Delete } from '@mui/icons-material';
 import {Task} from '../Task/Task'
 import {TaskStatuses, TaskType} from '../../api/todolists-api'
-import {FilterValuesType} from '../../state/todolists-reducer'
+import {FilterValuesType} from '../../Redux/todolists-reducer'
 import {Buttons} from "../Buttons/Buttons";
 import {useDispatch} from "react-redux";
 import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
@@ -68,7 +68,9 @@ export const Todolist = memo(function (props: PropsType) {
                 <Delete/>
             </IconButton>
         </h3>
-        <AddItemForm addItem={addTask}/>
+        <div className={s.add_item_form}>
+            <AddItemForm addItem={addTask}/>
+        </div>
         <div>
             {
                 tasksForTodolist.map(t => <Task key={t.id} task={t} todolistId={props.id}
