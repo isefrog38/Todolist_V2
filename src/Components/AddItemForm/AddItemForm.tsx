@@ -4,17 +4,18 @@ import IconButton from '@mui/material/IconButton';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
 type AddItemFormPropsType = {
+    color: 'info' | 'secondary'
     addItem: (title: string) => void
 }
 
-export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
+export const AddItemForm = React.memo(function ({addItem, color}: AddItemFormPropsType) {
 
     let [title, setTitle] = useState('')
     let [error, setError] = useState<string | null>(null)
 
-    const addItem = () => {
+    const addItems = () => {
         if (title.trim() !== '') {
-            props.addItem(title);
+            addItem(title);
             setTitle('');
         } else {
             setError('Title is required');
@@ -30,7 +31,7 @@ export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
             setError(null);
         }
         if (e.charCode === 13) {
-            addItem();
+            addItems();
         }
     }
 
@@ -40,14 +41,14 @@ export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
                 variant="outlined"
                 error={!!error}
                 value={title}
-                color={'info'}
+                color={color}
                 onChange={onChangeHandler}
                 onKeyPress={onKeyPressHandler}
                 label="Title"
                 helperText={error}
                 inputProps={{ maxLength: 20 }}
             />
-            <IconButton color="inherit" size={"large"} onClick={addItem}>
+            <IconButton color="inherit" size={"large"} onClick={addItems}>
                 <AddBoxOutlinedIcon style={{width: "30px", height: "30px"}} color={'inherit'}/>
             </IconButton>
         </div>

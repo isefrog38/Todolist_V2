@@ -51,7 +51,7 @@ function App() {
             <AppBar position={"static"} color={"secondary"} style={{height: "100px"}}>
                 <Toolbar>
                     <div className={"AddItem"}>
-                        <AddItemForm addItem={addTodolist} />
+                        <AddItemForm addItem={addTodolist} color={"info"} />
                     </div>
 
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className={"global_todo_title"}>

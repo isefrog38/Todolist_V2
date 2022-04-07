@@ -69,7 +69,7 @@ export const Todolist = memo(function (props: PropsType) {
             </IconButton>
         </h3>
         <div className={s.add_item_form}>
-            <AddItemForm addItem={addTask}/>
+            <AddItemForm addItem={addTask} color={'secondary'}/>
         </div>
         <div>
             {
