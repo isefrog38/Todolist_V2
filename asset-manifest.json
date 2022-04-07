@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/isefrog38/Todolist_V2/static/css/main.2247875b.chunk.css",
-    "main.js": "/isefrog38/Todolist_V2/static/js/main.60fa3300.chunk.js",
-    "main.js.map": "/isefrog38/Todolist_V2/static/js/main.60fa3300.chunk.js.map",
-    "runtime-main.js": "/isefrog38/Todolist_V2/static/js/runtime-main.fa8d7e48.js",
-    "runtime-main.js.map": "/isefrog38/Todolist_V2/static/js/runtime-main.fa8d7e48.js.map",
-    "static/js/2.7290a978.chunk.js": "/isefrog38/Todolist_V2/static/js/2.7290a978.chunk.js",
-    "static/js/2.7290a978.chunk.js.map": "/isefrog38/Todolist_V2/static/js/2.7290a978.chunk.js.map",
-    "static/js/3.3fce167d.chunk.js": "/isefrog38/Todolist_V2/static/js/3.3fce167d.chunk.js",
-    "static/js/3.3fce167d.chunk.js.map": "/isefrog38/Todolist_V2/static/js/3.3fce167d.chunk.js.map",
-    "index.html": "/isefrog38/Todolist_V2/index.html",
-    "static/css/main.2247875b.chunk.css.map": "/isefrog38/Todolist_V2/static/css/main.2247875b.chunk.css.map",
-    "static/js/2.7290a978.chunk.js.LICENSE.txt": "/isefrog38/Todolist_V2/static/js/2.7290a978.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/isefrog38/Todolist_V2/static/media/12.72513392.jpg"
+    "main.css": "/Todolist_V2/static/css/main.50d94fab.chunk.css",
+    "main.js": "/Todolist_V2/static/js/main.60fa3300.chunk.js",
+    "main.js.map": "/Todolist_V2/static/js/main.60fa3300.chunk.js.map",
+    "runtime-main.js": "/Todolist_V2/static/js/runtime-main.83cbfc2f.js",
+    "runtime-main.js.map": "/Todolist_V2/static/js/runtime-main.83cbfc2f.js.map",
+    "static/js/2.7290a978.chunk.js": "/Todolist_V2/static/js/2.7290a978.chunk.js",
+    "static/js/2.7290a978.chunk.js.map": "/Todolist_V2/static/js/2.7290a978.chunk.js.map",
+    "static/js/3.3fce167d.chunk.js": "/Todolist_V2/static/js/3.3fce167d.chunk.js",
+    "static/js/3.3fce167d.chunk.js.map": "/Todolist_V2/static/js/3.3fce167d.chunk.js.map",
+    "index.html": "/Todolist_V2/index.html",
+    "static/css/main.50d94fab.chunk.css.map": "/Todolist_V2/static/css/main.50d94fab.chunk.css.map",
+    "static/js/2.7290a978.chunk.js.LICENSE.txt": "/Todolist_V2/static/js/2.7290a978.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Todolist_V2/static/media/12.72513392.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fa8d7e48.js",
+    "static/js/runtime-main.83cbfc2f.js",
     "static/js/2.7290a978.chunk.js",
-    "static/css/main.2247875b.chunk.css",
+    "static/css/main.50d94fab.chunk.css",
     "static/js/main.60fa3300.chunk.js"
   ]
 }
