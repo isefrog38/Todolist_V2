@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ProgressBar/ProgressBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SnackBar/SnackBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Redux-Store/App-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RenameSpanFunc/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RenameSpanFunc/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Authorization-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/todolists-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/LoginPage/LoginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LoginPage/LoginPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/LoginPage/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LoginPage/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux-Store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -56,22 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Portfolio" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="D:\PAVEL\My_Lessons\Todolist_V2\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/PAVEL/Lessons/Todolist_V2/src/Redux-Store",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "D:\\PAVEL\\Lessons\\Todolist_V2\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PAVEL\Lessons\Todolist_V2\src\Redux-Store" />
       <recent name="D:\PAVEL\My_Lessons\Todolist_V2\src\Components" />
       <recent name="D:\PAVEL\My_Lessons\Todolist_V2\src\Redux" />
       <recent name="D:\PAVEL\My_Lessons\todo14v2\src\Components" />
@@ -107,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +131,7 @@
       <workItem from="1649365457169" duration="859000" />
       <workItem from="1649680308953" duration="596000" />
       <workItem from="1649694749078" duration="8000" />
+      <workItem from="1649774029109" duration="5816000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,6 @@
 import React, {useCallback, useEffect} from 'react';
 import './App.css';
 import {Todolist} from './Components/Todolist/Todolist';
-import {AddItemForm} from './Components/AddItemForm/AddItemForm';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import {TodolistDomainType} from './Redux-Store/todolists-reducer';
@@ -13,25 +10,29 @@ import {TaskType} from './api/todolists-api';
 import {createTodolistTC, getTodolistsTC} from "./Thunk/Todolist-thunk";
 import {initialStateAuthorizationType} from "./Redux-Store/Authorization-reducer";
 import {AuthMeTC, LogOutTC} from "./Thunk/Auth-thunk";
-import {Button, Typography} from "@mui/material";
 import {LoginPage} from "./Components/LoginPage/LoginPage";
+import {Header} from "./Components/Header/Header";
+import {ProgressBar} from "./Components/ProgressBar/ProgressBar";
+import {Snackbars} from "./Components/SnackBar/SnackBar";
+import {AppInitialStateType} from "./Redux-Store/App-reducer";
 
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
 
-function App() {
+const App = () => {
 
     const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists);
     const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks);
-    const stateAuth = useSelector<AppRootStateType, initialStateAuthorizationType>(state => state.AuthorizationReducer);
+    const { login , isAuth } = useSelector<AppRootStateType, initialStateAuthorizationType>(state => state.AuthorizationReducer);
+    const { status } = useSelector<AppRootStateType, AppInitialStateType>(state => state.AppReducer);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(AuthMeTC())
         dispatch(getTodolistsTC())
     }, []);
-    let a =0
+
     const addTodolist = useCallback((title: string) => {
         dispatch(createTodolistTC(title));
     }, [dispatch]);
@@ -39,24 +40,13 @@ function App() {
     const onClickHandler = () => dispatch(LogOutTC());
 
 
-    if (!stateAuth.isAuth) return <LoginPage/>
+    if (!isAuth) return <LoginPage/>;
 
     return (
         <div className="App">
-            <AppBar position={"static"} color={"secondary"} style={{height: "100px"}}>
-                <Toolbar>
-                    <div className={"AddItem"}>
-                        <AddItemForm addItem={addTodolist} color={"info"}/>
-                    </div>
-
-                    <Typography variant="h6" component="div" sx={{flexGrow: 1}} className={"global_todo_title"}>
-                        Todolist for your business
-                    </Typography>
-
-                    <h3 className={"Login_name"}>{stateAuth.login}</h3>
-                    <Button onClick={onClickHandler} color="error" variant="contained">LogOut</Button>
-                </Toolbar>
-            </AppBar>
+            <Header login={login} addTodolist={addTodolist} onClickHandler={onClickHandler}/>
+            {status === 'loading' && <ProgressBar />}
+            <Snackbars />
             <div className={"MainContainer"}>
                 <Grid container style={{padding: '20px'}}>
                     <Grid container spacing={7}>
@@ -86,6 +76,6 @@ function App() {
             </div>
         </div>
     );
-}
+};
 
 export default App;

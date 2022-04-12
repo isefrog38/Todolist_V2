@@ -1,5 +1,17 @@
-.main_block_login_page {
-    height: 100%;
-    width: 100%;
-    background-color: antiquewhite;
+.background_block_login_page {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(177, 116, 250, 0.66), #ffffff);
+}
+
+.block_login_page {
+    margin: 200px auto;
+}
+
+
+@media (min-width: 50px) and (max-width: 1000px) {
+    .block_login_page {
+        margin: 50px auto;
+    }
 }
