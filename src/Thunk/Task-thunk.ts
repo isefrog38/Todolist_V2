@@ -1,6 +1,6 @@
 import {todolistsAPI, UpdateTaskModelType} from "../api/todolists-api";
-import {addTaskAC, removeTaskAC, setTasksAC, updateTaskAC} from "../Redux/tasks-reducer";
-import {AppRootStateType, AppThunk} from "../Redux/store";
+import {addTaskAC, removeTaskAC, setTasksAC, updateTaskAC} from "../Redux-Store/tasks-reducer";
+import {AppRootStateType, AppThunk} from "../Redux-Store/store";
 
 export const getTasksTC = (todolistId: string): AppThunk => async dispatch => {
     const response = await todolistsAPI.getTasks(todolistId);

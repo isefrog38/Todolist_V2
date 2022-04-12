@@ -28,3 +28,9 @@
         margin: 20px 5px;
     }
 }
+
+
+.MainContainer {
+    margin: 0 auto;
+    width: 90%;
+}

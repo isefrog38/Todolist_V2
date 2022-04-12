@@ -6,13 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RenameSpanFunc/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RenameSpanFunc/EditableSpan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Authorization-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Social_network" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Portfolio" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -122,7 +130,11 @@
       <workItem from="1649233975511" duration="10000" />
       <workItem from="1649251485870" duration="24000" />
       <workItem from="1649251708245" duration="28000" />
-      <workItem from="1649342167573" duration="12358000" />
+      <workItem from="1649342167573" duration="15369000" />
+      <workItem from="1649364269310" duration="227000" />
+      <workItem from="1649365457169" duration="859000" />
+      <workItem from="1649680308953" duration="596000" />
+      <workItem from="1649694749078" duration="8000" />
     </task>
     <servers />
   </component>

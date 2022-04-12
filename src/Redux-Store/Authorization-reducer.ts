@@ -1,17 +1,17 @@
 let SET_USER_DATA = "SET_USER_DATA";
 
 export type AuthActionType = SetUserDataAC;
+type DataType = {
+    id: number | null
+    email: string | null
+    login: string | null
+    isAuth: boolean
+};
 export type initialStateAuthorizationType = {
     id: number | null
     email: string | null
     login: string | null
     isFetching: boolean
-    isAuth: boolean
-};
-export type DataType = {
-    id: number | null
-    email: string | null
-    login: string | null
     isAuth: boolean
 };
 type SetUserDataAC = ReturnType<typeof setAuthUserDataAC>;

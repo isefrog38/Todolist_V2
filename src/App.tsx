@@ -4,25 +4,21 @@ import {Todolist} from './Components/Todolist/Todolist';
 import {AddItemForm} from './Components/AddItemForm/AddItemForm';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import {TodolistDomainType} from './Redux/todolists-reducer';
+import {TodolistDomainType} from './Redux-Store/todolists-reducer';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType} from './Redux/store';
+import {AppRootStateType} from './Redux-Store/store';
 import {TaskType} from './api/todolists-api';
 import {createTodolistTC, getTodolistsTC} from "./Thunk/Todolist-thunk";
-import {initialStateAuthorizationType} from "./Redux/Authorization-reducer";
-import SignIn from "./Components/SignIn/SignIn";
+import {initialStateAuthorizationType} from "./Redux-Store/Authorization-reducer";
 import {AuthMeTC, LogOutTC} from "./Thunk/Auth-thunk";
 import {Button, Typography} from "@mui/material";
 import {LoginPage} from "./Components/LoginPage/LoginPage";
 
-
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
-
 
 function App() {
 
@@ -35,7 +31,7 @@ function App() {
         dispatch(AuthMeTC())
         dispatch(getTodolistsTC())
     }, []);
-
+    let a =0
     const addTodolist = useCallback((title: string) => {
         dispatch(createTodolistTC(title));
     }, [dispatch]);
@@ -43,18 +39,17 @@ function App() {
     const onClickHandler = () => dispatch(LogOutTC());
 
 
-
-    if (!stateAuth.isAuth) return <LoginPage />
+    if (!stateAuth.isAuth) return <LoginPage/>
 
     return (
         <div className="App">
             <AppBar position={"static"} color={"secondary"} style={{height: "100px"}}>
                 <Toolbar>
                     <div className={"AddItem"}>
-                        <AddItemForm addItem={addTodolist} color={"info"} />
+                        <AddItemForm addItem={addTodolist} color={"info"}/>
                     </div>
 
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className={"global_todo_title"}>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 1}} className={"global_todo_title"}>
                         Todolist for your business
                     </Typography>
 
@@ -62,33 +57,33 @@ function App() {
                     <Button onClick={onClickHandler} color="error" variant="contained">LogOut</Button>
                 </Toolbar>
             </AppBar>
-            <Container fixed>
+            <div className={"MainContainer"}>
                 <Grid container style={{padding: '20px'}}>
-                </Grid>
-                <Grid container spacing={7}>
-                    {
-                        todolists.map(tl => {
-                            let allTodolistTasks = tasks[tl.id];
+                    <Grid container spacing={7}>
+                        {
+                            todolists.map(tl => {
+                                let allTodolistTasks = tasks[tl.id];
 
-                            return <Grid item key={tl.id}>
-                                <Paper elevation={3}
-                                       style={{
-                                           padding: '20px',
-                                           borderRadius: "10px",
-                                           backgroundColor: "#ffffffa6"
-                                       }}>
-                                    <Todolist
-                                        id={tl.id}
-                                        title={tl.title}
-                                        tasks={allTodolistTasks}
-                                        filter={tl.filter}
-                                    />
-                                </Paper>
-                            </Grid>
-                        })
-                    }
+                                return <Grid item key={tl.id}>
+                                    <Paper elevation={3}
+                                           style={{
+                                               padding: '20px',
+                                               borderRadius: "10px",
+                                               backgroundColor: "#ffffffa6"
+                                           }}>
+                                        <Todolist
+                                            id={tl.id}
+                                            title={tl.title}
+                                            tasks={allTodolistTasks}
+                                            filter={tl.filter}
+                                        />
+                                    </Paper>
+                                </Grid>
+                            })
+                        }
+                    </Grid>
                 </Grid>
-            </Container>
+            </div>
         </div>
     );
 }

@@ -1,5 +1,5 @@
-import {AppThunk} from "../Redux/store";
-import {setAuthUserDataAC} from "../Redux/Authorization-reducer";
+import {AppThunk} from "../Redux-Store/store";
+import {setAuthUserDataAC} from "../Redux-Store/Authorization-reducer";
 import {AuthAPI} from "../api/todolists-api";
 
 export const AuthMeTC = (): AppThunk => async dispatch => {
