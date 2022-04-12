@@ -1,12 +1,13 @@
 import { TasksStateType } from '../App';
 import {AddTodolistActionType, RemoveTodolistActionType, SetTodolistsActionType} from './todolists-reducer';
-import {TaskType, UpdateTaskModelType} from '../api/todolists-api';
+import {TaskStatuses, TaskType, UpdateTaskModelType} from '../api/todolists-api';
 
 export type TaskActionsType =
     | ReturnType<typeof setTasksAC>
     | ReturnType<typeof removeTaskAC>
     | ReturnType<typeof addTaskAC>
     | ReturnType<typeof updateTaskAC>
+    | ReturnType<typeof changeTaskEntityStatusAC>
     | SetTodolistsActionType
     | AddTodolistActionType
     | RemoveTodolistActionType
@@ -47,6 +48,9 @@ export const tasksReducer = (state: TasksStateType = initialState, action: TaskA
         case 'UPDATE-TASK': {
             return {...state, [action.todolistId]: state[action.todolistId].map(t => t.id === action.taskId ? {...t, ...action.model} : t)};
         }
+        case 'CHANGE_TASK_ENTITY_STATUS': {
+            return {...state, [action.todolistId]: state[action.todolistId].map(t => t.id === action.taskId ? {...t, status: action.entityStatus} : t)};
+        }
         default:
             return state;
     }
@@ -57,4 +61,5 @@ export const setTasksAC = (tasks: Array<TaskType>, todolistId: string) => ({type
 export const removeTaskAC = (taskId: string, todolistId: string) => ({type: 'REMOVE-TASK', taskId: taskId, todolistId: todolistId} as const);
 export const addTaskAC = (todolistId: string, task: TaskType) => ({type: 'ADD-TASK', task} as const );
 export const updateTaskAC = (taskId: string, todolistId: string, model: UpdateTaskModelType) => ({type: 'UPDATE-TASK', todolistId, taskId, model} as const );
+export const changeTaskEntityStatusAC = (todolistId: string, taskId: string, entityStatus: TaskStatuses) => ({type: 'CHANGE_TASK_ENTITY_STATUS', taskId, todolistId, entityStatus} as const );
 

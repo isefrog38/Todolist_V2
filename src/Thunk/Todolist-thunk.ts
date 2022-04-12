@@ -1,38 +1,108 @@
 import {todolistsAPI} from "../api/todolists-api";
-import {addTodolistAC, changeTodolistTitleAC, removeTodolistAC, setTodolistsAC} from "../Redux-Store/todolists-reducer";
+import {
+    addTodolistAC,
+    changeTodolistEntityStatusAC,
+    changeTodolistTitleAC,
+    removeTodolistAC,
+    setTodolistsAC
+} from "../Redux-Store/todolists-reducer";
 import {AppThunk} from "../Redux-Store/store";
 import {setAppStatusAC} from "../Redux-Store/App-reducer";
+import {handleServerAppError, handleServerNetworkError} from "../Utils/Error-urils";
+import {removeTaskAC} from "../Redux-Store/tasks-reducer";
 
 export const getTodolistsTC = (): AppThunk => async dispatch => {
+
     dispatch(setAppStatusAC('loading'));
-    const response = await todolistsAPI.getTodolists();
+
+    /*const response = await todolistsAPI.getTodolists();
     dispatch(setTodolistsAC(response.data));
-    dispatch(setAppStatusAC('succeeded'));
+    dispatch(setAppStatusAC('succeeded'));*/
+    try {
+        const response = await todolistsAPI.getTodolists();
+        if (response.status === 200) {
+            dispatch(setTodolistsAC(response.data));
+            dispatch(setAppStatusAC('succeeded'));
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            handleServerNetworkError(error, dispatch);
+        }
+    }
 }
 
 export const updateTodolistTC = (todolistId: string, title: string): AppThunk => async dispatch => {
+
     dispatch(setAppStatusAC('loading'));
-    const response = await todolistsAPI.updateTodolist(todolistId, title);
+
+    /*const response = await todolistsAPI.updateTodolist(todolistId, title);
     if (response.data.resultCode === 0) {
         dispatch(changeTodolistTitleAC(todolistId, title));
         dispatch(setAppStatusAC('succeeded'));
+    }*/
+    try {
+        const response = await todolistsAPI.updateTodolist(todolistId, title);
+        if (response.data.resultCode === 0) {
+            dispatch(changeTodolistTitleAC(todolistId, title));
+            dispatch(setAppStatusAC('succeeded'));
+        } else {
+            handleServerAppError(response.data, dispatch);
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            handleServerNetworkError(error, dispatch);
+        }
     }
 }
 
 export const removeTodolistTC = (todolistId: string): AppThunk => async dispatch => {
+
+    dispatch(changeTodolistEntityStatusAC( todolistId, 'loading' ));
     dispatch(setAppStatusAC('loading'));
-    const response = await todolistsAPI.deleteTodolist(todolistId);
+
+    /*const response = await todolistsAPI.deleteTodolist(todolistId);
     if (response.data.resultCode === 0) {
         dispatch(removeTodolistAC(todolistId));
         dispatch(setAppStatusAC('succeeded'));
+        dispatch(changeTodolistEntityStatusAC( todolistId, 'succeeded' ));
+    }*/
+    try {
+        const response = await todolistsAPI.deleteTodolist(todolistId);
+        if (response.data.resultCode === 0) {
+            dispatch(removeTodolistAC(todolistId));
+            dispatch(setAppStatusAC('succeeded'));
+            dispatch(changeTodolistEntityStatusAC( todolistId, 'succeeded' ));
+        } else {
+            handleServerAppError(response.data, dispatch);
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            handleServerNetworkError(error, dispatch);
+        }
     }
 }
 
 export const createTodolistTC = (title: string): AppThunk => async dispatch => {
+
     dispatch(setAppStatusAC('loading'));
-    const response = await todolistsAPI.createTodolist(title);
+
+    /*const response = await todolistsAPI.createTodolist(title);
     if (response.data.resultCode === 0) {
         dispatch(addTodolistAC(title, response.data.data.item.id));
         dispatch(setAppStatusAC('succeeded'));
+    }*/
+
+    try {
+        const response = await todolistsAPI.createTodolist(title);
+        if (response.data.resultCode === 0) {
+            dispatch(addTodolistAC(title, response.data.data.item.id));
+            dispatch(setAppStatusAC('succeeded'));
+        } else {
+            handleServerAppError(response.data, dispatch);
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            handleServerNetworkError(error, dispatch);
+        }
     }
 }

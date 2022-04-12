@@ -1,7 +1,9 @@
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed';
+export type SetAppErrorMessageActionType = ReturnType <typeof setAppErrorMessageAC>;
+export type SetAppStatusActionType = ReturnType<typeof setAppStatusAC>;
 export type AppActionsType =
-    | ReturnType <typeof setAppErrorMessageAC>
-    | ReturnType<typeof setAppStatusAC>
+    | SetAppErrorMessageActionType
+    | SetAppStatusActionType;
 export type AppInitialStateType = {
     status: RequestStatusType
     error: null | string

@@ -44,11 +44,14 @@ const App = () => {
 
     return (
         <div className="App">
-            <Header login={login} addTodolist={addTodolist} onClickHandler={onClickHandler}/>
-            {status === 'loading' && <ProgressBar />}
-            <Snackbars />
+            <Header login={login} addTodolist={addTodolist} onClickHandler={onClickHandler} />
+
+            {/*Tools*/}
+            <div className="progress_bar_padding">{status === 'loading' && <ProgressBar />}</div>
+            <Snackbars typeError={'error'}/>
+
             <div className={"MainContainer"}>
-                <Grid container style={{padding: '20px'}}>
+                <Grid container style={{width: "100%", padding: '40px'}}>
                     <Grid container spacing={7}>
                         {
                             todolists.map(tl => {
@@ -66,6 +69,7 @@ const App = () => {
                                             title={tl.title}
                                             tasks={allTodolistTasks}
                                             filter={tl.filter}
+                                            entityStatus={tl.entityStatus}
                                         />
                                     </Paper>
                                 </Grid>

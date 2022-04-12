@@ -6,9 +6,10 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 type AddItemFormPropsType = {
     color: 'info' | 'secondary'
     addItem: (title: string) => void
+    disabled?: boolean
 }
 
-export const AddItemForm = React.memo(function ({addItem, color}: AddItemFormPropsType) {
+export const AddItemForm = React.memo(function ({disabled, addItem, color}: AddItemFormPropsType) {
 
     let [title, setTitle] = useState('')
     let [error, setError] = useState<string | null>(null)
@@ -38,6 +39,7 @@ export const AddItemForm = React.memo(function ({addItem, color}: AddItemFormPro
     return (
         <div style={{display: "flex"}}>
             <TextField
+                disabled={disabled}
                 variant="outlined"
                 error={!!error}
                 value={title}
@@ -46,9 +48,8 @@ export const AddItemForm = React.memo(function ({addItem, color}: AddItemFormPro
                 onKeyPress={onKeyPressHandler}
                 label="Title"
                 helperText={error}
-                inputProps={{ maxLength: 20 }}
             />
-            <IconButton color="inherit" size={"large"} onClick={addItems}>
+            <IconButton color="inherit" size={"large"} onClick={addItems} disabled={disabled}>
                 <AddBoxOutlinedIcon style={{width: "30px", height: "30px"}} color={'inherit'}/>
             </IconButton>
         </div>
