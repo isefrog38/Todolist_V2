@@ -5,18 +5,19 @@ import {EditableSpan} from '../RenameSpanFunc/EditableSpan'
 import IconButton from '@mui/material/IconButton';
 import {Delete} from '@mui/icons-material';
 import {Task} from '../Task/Task'
-import {TaskStatuses, TaskType} from '../../api/todolists-api'
+import {TaskStatuses} from '../../api/todolists-api'
 import {FilterValuesType} from '../../Redux-Store/todolists-reducer'
 import {Buttons} from "../Buttons/Buttons";
 import {useDispatch} from "react-redux";
 import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
 import {createTaskTC, getTasksTC, removeTaskTC, updateTaskTC} from "../../Thunk/Task-thunk";
 import {RequestStatusType} from "../../Redux-Store/App-reducer";
+import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
 
 type PropsType = {
     id: string
     title: string
-    tasks: Array<TaskType>
+    tasks: Array<TaskTypeWithStatusEntity>
     filter: FilterValuesType
     entityStatus: RequestStatusType
 }
@@ -68,7 +69,7 @@ export const Todolist = memo(function (props: PropsType) {
 
             <h3 className={s.block_name_and_delete}>
                 <EditableSpan disabled={props.entityStatus === 'loading'} value={props.title} onChange={changeTodolistTitle}/>
-                <IconButton onClick={removeTodolist} disabled={props.entityStatus === 'loading'}>
+                <IconButton size={"large"} onClick={removeTodolist} disabled={props.entityStatus === 'loading'}>
                     <Delete/>
                 </IconButton>
             </h3>
@@ -84,7 +85,6 @@ export const Todolist = memo(function (props: PropsType) {
                                                     removeTask={removeTask}
                                                     changeTaskTitle={changeTaskTitle}
                                                     changeTaskStatus={changeStatus}
-                                                    entityStatus={props.entityStatus}
                     />)
                 }
             </div>

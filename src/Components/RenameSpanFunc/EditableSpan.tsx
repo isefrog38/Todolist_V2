@@ -33,7 +33,6 @@ export const EditableSpan = React.memo(function ({value, onChange, disabled}: Ed
         ? <TextField
             disabled={disabled}
             onKeyPress={onKeyPressHandler}
-            inputProps={{ maxLength: 20 }}
             value={title}
             onChange={changeTitle}
             autoFocus onBlur={activateViewMode}

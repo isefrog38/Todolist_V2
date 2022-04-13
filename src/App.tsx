@@ -6,7 +6,6 @@ import Paper from '@mui/material/Paper';
 import {TodolistDomainType} from './Redux-Store/todolists-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from './Redux-Store/store';
-import {TaskType} from './api/todolists-api';
 import {createTodolistTC, getTodolistsTC} from "./Thunk/Todolist-thunk";
 import {initialStateAuthorizationType} from "./Redux-Store/Authorization-reducer";
 import {AuthMeTC, LogOutTC} from "./Thunk/Auth-thunk";
@@ -15,10 +14,7 @@ import {Header} from "./Components/Header/Header";
 import {ProgressBar} from "./Components/ProgressBar/ProgressBar";
 import {Snackbars} from "./Components/SnackBar/SnackBar";
 import {AppInitialStateType} from "./Redux-Store/App-reducer";
-
-export type TasksStateType = {
-    [key: string]: Array<TaskType>
-}
+import {TasksStateType} from "./Redux-Store/tasks-reducer";
 
 const App = () => {
 
@@ -44,7 +40,7 @@ const App = () => {
 
     return (
         <div className="App">
-            <Header login={login} addTodolist={addTodolist} onClickHandler={onClickHandler} />
+            <Header login={login} addTodolist={addTodolist} onClickHandler={onClickHandler} status={status}/>
 
             {/*Tools*/}
             <div className="progress_bar_padding">{status === 'loading' && <ProgressBar />}</div>

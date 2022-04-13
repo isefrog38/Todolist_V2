@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import {AuthRequestType, ResponseGetAuthType} from "../Types/AythTypes";
+import {RequestStatusType} from "../Redux-Store/App-reducer";
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.1/',
