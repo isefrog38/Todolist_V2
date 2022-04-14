@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Header.module.css';
+import '../AppIsAuth/SmallApp.css';
 import Toolbar from "@mui/material/Toolbar";
 import {AddItemForm} from "../AddItemForm/AddItemForm";
 import {Button, Typography} from "@mui/material";

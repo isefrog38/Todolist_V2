@@ -1,11 +1,5 @@
 import {todolistsAPI, UpdateTaskModelType} from "../api/todolists-api";
-import {
-    addTaskAC,
-    changeTaskEntityStatusAC,
-    removeTaskAC,
-    setTasksAC,
-    updateTaskAC
-} from "../Redux-Store/tasks-reducer";
+import {addTaskAC, changeTaskEntityStatusAC, removeTaskAC, setTasksAC, updateTaskAC} from "../Redux-Store/tasks-reducer";
 import {AppRootStateType, AppThunk} from "../Redux-Store/store";
 import {RequestStatusType, setAppStatusAC} from "../Redux-Store/App-reducer";
 import {changeTodolistEntityStatusAC} from "../Redux-Store/todolists-reducer";

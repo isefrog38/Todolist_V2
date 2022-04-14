@@ -26,7 +26,7 @@ export const Task = React.memo((props: TaskPropsType) => {
         props.changeTaskTitle(props.task.id, newValue, props.todolistId)
     }, [props.task.id, props.todolistId]);
 
-    const disabled = !!TaskStatuses.New ;
+    const disabled = props.task.entityTaskStatus === 'loading' ;
 
     return <div key={props.task.id} className={props.task.status === TaskStatuses.Completed ? s.is_done : ''}>
         <Checkbox
@@ -35,8 +35,8 @@ export const Task = React.memo((props: TaskPropsType) => {
             onChange={onChangeHandler}
         />
 
-        <EditableSpan disabled={props.task.entityTaskStatus === 'loading'} value={props.task.title} onChange={onTitleChangeHandler}/>
-        <IconButton onClick={onClickHandler} disabled={props.task.entityTaskStatus === 'loading'}>
+        <EditableSpan disabled={disabled} value={props.task.title} onChange={onTitleChangeHandler}/>
+        <IconButton onClick={onClickHandler} disabled={disabled}>
             <Delete/>
         </IconButton>
     </div>
