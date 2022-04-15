@@ -33,11 +33,18 @@ export const LogOutTC = (): AppThunk => async dispatch => {
 }
 
 export const LoginTC = (values: {email: string, password: string, rememberMe: boolean, captcha: boolean}): AppThunk => async dispatch => {
-    const response = await AuthAPI.Login(values.email, values.password, values.rememberMe,values.captcha);
-    const responseAuthMe = await AuthAPI.AuthUser();
-    if (response.resultCode === 0) {
-    console.log(response)
-        let {login, email, id} = responseAuthMe.data;
-        dispatch(setAuthUserDataAC({id, email, login, isAuth: true}))
+
+    try {
+        const response = await AuthAPI.Login(values.email, values.password, values.rememberMe,values.captcha);
+        const responseAuthMe = await AuthAPI.AuthUser();
+        if (response.resultCode === 0) {
+            let {login, email, id} = responseAuthMe.data;
+            dispatch(setAuthUserDataAC({id, email, login, isAuth: true}))
+        }
+    }
+    catch (error) {
+        if (error instanceof Error) {
+            handleServerNetworkError(error, dispatch);
+        }
     }
 }
