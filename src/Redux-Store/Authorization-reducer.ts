@@ -1,6 +1,7 @@
-let SET_USER_DATA = "SET_USER_DATA";
+const SET_USER_DATA = "SET_USER_DATA",
+    SET_FETCHING = "SET_FETCHING";
 
-export type AuthActionType = SetUserDataAC;
+export type AuthActionType = ReturnType<typeof setIsFetchingAC> | ReturnType<typeof setAuthUserDataAC>;
 type DataType = {
     id: number | null
     email: string | null
@@ -14,7 +15,6 @@ export type initialStateAuthorizationType = {
     isFetching: boolean
     isAuth: boolean
 };
-type SetUserDataAC = ReturnType<typeof setAuthUserDataAC>;
 let initialStateAuthorization: initialStateAuthorizationType = {
     id: null,
     login: null,
@@ -30,6 +30,11 @@ export const AuthorizationReducer = (state = initialStateAuthorization, action: 
                 ...state,
                 ...action.payload
             }
+            case SET_FETCHING :
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
         default:
             return state
     }
@@ -37,4 +42,7 @@ export const AuthorizationReducer = (state = initialStateAuthorization, action: 
 
 export const setAuthUserDataAC = (payload: DataType) => {
     return {type: SET_USER_DATA, payload} as const
+}
+export const setIsFetchingAC = (isFetching: boolean) => {
+    return {type: SET_FETCHING, isFetching} as const
 }

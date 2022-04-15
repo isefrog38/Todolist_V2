@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/AppIsAuth/SmallApp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/AppIsAuth/SmallApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/Loding/Loading.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/Loding/Loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux-Store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Error-urils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Error-urils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignIn/SignIn.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignIn/SignIn.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignIn/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -53,6 +52,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="D:\PAVEL\My_Lessons\Todolist_V2\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -127,7 +127,8 @@
       <workItem from="1649774029109" duration="5816000" />
       <workItem from="1649781762869" duration="12808000" />
       <workItem from="1649838121293" duration="10384000" />
-      <workItem from="1649948437419" duration="9938000" />
+      <workItem from="1649948437419" duration="10089000" />
+      <workItem from="1650016342048" duration="6625000" />
     </task>
     <servers />
   </component>

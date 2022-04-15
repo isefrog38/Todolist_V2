@@ -5,21 +5,25 @@ import {initialStateAuthorizationType} from "./Redux-Store/Authorization-reducer
 import {AuthMeTC} from "./Thunk/Auth-thunk";
 import {LoginPage} from "./Components/LoginPage/LoginPage";
 import {SmallApp} from "./Components/AppIsAuth/SmallApp";
+import {Loading} from "./Utils/Loding/Loading";
 
-const App = () => {
+export const App = () => {
 
-    const { isAuth } = useAppSelector<initialStateAuthorizationType>(state => state.AuthorizationReducer);
+    const {isAuth, isFetching} = useAppSelector<initialStateAuthorizationType>(state => state.AuthorizationReducer);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(AuthMeTC());
     }, []);
 
-    if (!isAuth) return <LoginPage/>;
-
-    return (
-        <SmallApp />
-    );
+    return  (
+        <>
+            {isFetching && <Loading />}
+            {
+                !isAuth
+                    ? <LoginPage />
+                    : <SmallApp />
+            }
+        </>
+    )
 };
-
-export default App;

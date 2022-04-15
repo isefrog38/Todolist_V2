@@ -4,9 +4,7 @@ import {useDispatch} from "react-redux";
 import {useFormik} from "formik";
 import {LoginTC} from "../../Thunk/Auth-thunk";
 
-type SignInType = {
-
-};
+type SignInType = {};
 type FormikErrorType = {
     email?: string;
     password?: string;
@@ -18,7 +16,7 @@ const SignIn = (props: SignInType) => {
     const dispatch = useDispatch();
 
     const registrationForm = useFormik({
-        initialValues: { email: "", password: "" , rememberMe: false, captcha: true},
+        initialValues: {email: "", password: "", rememberMe: false, captcha: true},
         validate: (values: FormikErrorType) => {
             const errors: FormikErrorType = {};
             if (!values.email) {
@@ -26,8 +24,10 @@ const SignIn = (props: SignInType) => {
             } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
                 errors.email = "Invalid email address";
             }
-            if (!values.password || values.password.length < 4) {
+            if (!values.password) {
                 errors.password = "Password is required";
+            } else if (values.password.length < 4) {
+                errors.password = "Invalid password";
             }
             return errors;
         },
@@ -56,58 +56,69 @@ const SignIn = (props: SignInType) => {
                         <p className={s.clearfix}>
                             <label htmlFor="email">Email</label>
                             <input
-                                type="text"
+                                type="email"
                                 id="email"
                                 placeholder="email"
                                 {...registrationForm.getFieldProps("email")}
                             />
-                            {registrationForm.touched.email && registrationForm.errors.email ? (
-                                <div style={{color: "red", fontSize: "1.2rem"}}>{registrationForm.errors.email}</div>
+                            <div className={s.error_block}>
+                                {registrationForm.touched.email && registrationForm.errors.email ? (
+                                    <div
+                                        style={{color: "red", fontSize: "1.2rem"}}>{registrationForm.errors.email}</div>
+                                ) : null}
+                            </div>
+                        </p>
+
+                        <p className={s.clearfix}>
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="password"
+                                {...registrationForm.getFieldProps("password")}
+                            />
+                            <div className={s.error_block}>
+                                {registrationForm.touched.password && registrationForm.errors.password ? (
+                                    <div style={{
+                                        color: "red",
+                                        fontSize: "1.2rem"
+                                    }}>{registrationForm.errors.password}</div>
+                                ) : null}
+                            </div>
+                            {registrationForm.values.password  ? (
+                                <div className={s.text_helper}>
+                                    <div className={s.angle}/>
+                                    <span>Пароль должен содержать как минимум:</span>
+                                    <div className={s.text_helper_small_text}>
+                                        {mustContainData.map((data) => (
+                                            <MustContainItem key={data} data={data}/>
+                                        ))}
+                                    </div>
+                                </div>
                             ) : null}
                         </p>
 
                         <p className={s.clearfix}>
-                                <label htmlFor="password">Password</label>
-                                <input
-                                    type="password"
-                                    id="password"
-                                    placeholder="password"
-                                    {...registrationForm.getFieldProps("password")}
-                                />
-                                {registrationForm.values.password ? (
-                                    <div className={s.text_helper}>
-                                        <div className={s.angle}/>
-                                        <span>Пароль должен содержать как минимум:</span>
-                                        <div className={s.text_helper_small_text}>
-                                            {mustContainData.map((data) => (
-                                                <MustContainItem key={data} data={data}/>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ) : null}
-                            </p>
+                            <input
+                                style={{width: "50px", height: "50px"}}
+                                type="checkbox"
+                                id="remember"
+                                {...registrationForm.getFieldProps("rememberMe")}
+                            />
+                            <label htmlFor="remember" className={s.label_rememberMe_block}>
+                                Remember me
+                            </label>
 
-                        <p className={s.clearfix}>
-                                <input
-                                    style={{width: "50px", height: "50px"}}
-                                    type="checkbox"
-                                    id="remember"
-                                    {...registrationForm.getFieldProps("rememberMe")}
-                                />
-                                <label htmlFor="remember" className={s.label_rememberMe_block}>
-                                    Remember me
-                                </label>
-
-                                <button
-                                    className={s.button}
-                                    type="submit"
-                                    name="submit"
-                                    value="Submit"
-                                    disabled={!(registrationForm.isValid && registrationForm.dirty)}
-                                >
-                                    Submit
-                                </button>
-                            </p>
+                            <button
+                                className={s.button}
+                                type="submit"
+                                name="submit"
+                                value="Submit"
+                                disabled={!(registrationForm.isValid && registrationForm.dirty)}
+                            >
+                                Submit
+                            </button>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -117,11 +128,10 @@ const SignIn = (props: SignInType) => {
 
 
 export default SignIn;
-/*export default RedirectToProfile(SignIn);*/
 
 
 const MustContainItem = (props: any) => {
-    const { data } = props;
+    const {data} = props;
     const label = data[0];
     const meetsReq = data[1];
 
@@ -134,8 +144,8 @@ const MustContainItem = (props: any) => {
     return (
         <span style={{fontSize: "1rem"}}>
       <div className={"validateChecklist"}>
-        <span >{label}</span>
-        <div className={setClass()} />
+        <span>{label}</span>
+        <div className={setClass()}/>
       </div>
     </span>
     );
