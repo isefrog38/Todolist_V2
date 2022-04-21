@@ -13,7 +13,6 @@ import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
 import {createTaskTC, getTasksTC, removeTaskTC, updateTaskTC} from "../../Thunk/Task-thunk";
 import {RequestStatusType} from "../../Redux-Store/App-reducer";
 import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
-import TransitionGroup from "react-transition-group/TransitionGroup";
 
 type PropsType = {
     id: string
@@ -67,7 +66,6 @@ export const Todolist = memo(function (props: PropsType) {
 
     return (
         <div className={s.main_paper_div}>
-
             <h3 className={s.block_name_and_delete}>
                 <EditableSpan disabled={props.entityStatus === 'loading'} value={props.title}
                               onChange={changeTodolistTitle}/>
@@ -79,9 +77,6 @@ export const Todolist = memo(function (props: PropsType) {
             <AddItemForm addItem={addTask} color={'secondary'} disabled={props.entityStatus === 'loading'}/>
 
             <div className={s.tasks_block}>
-                <TransitionGroup appear={true} enter={true} exit={true}>
-
-
                     {
                         tasksForTodolist.map(t => <Task key={t.id}
                                                         task={t}
@@ -91,7 +86,6 @@ export const Todolist = memo(function (props: PropsType) {
                                                         changeTaskStatus={changeStatus}
                         />)
                     }
-                </TransitionGroup>
             </div>
 
             <Buttons todolistId={props.id} filterBS={props.filter}/>

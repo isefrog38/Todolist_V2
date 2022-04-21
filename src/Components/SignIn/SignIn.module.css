@@ -3,9 +3,9 @@
     flex-direction: column;
     font-family: 'Ubuntu', 'Lato', sans-serif;
     font-weight: 400;
-    width: 400px;
+    width: 100%;
     margin: 60px auto 30px;
-    padding: 20px 50px;
+    padding: 20px 40px;
     overflow: hidden;
     background: #4f4f4f;
     border-radius: 0.4em;
@@ -165,10 +165,29 @@
     height: 20px;
 }
 
+.main_login {
+    margin: 0 auto;
+    width: 30%;
+}
 
-@media (min-width: 50px) and (max-width: 1000px) {
+@media (min-width: 800px) and (max-width: 1200px) {
+    .main_login {
+        width: 80%;
+    }
     .form_3 {
-        width: 250px;
+        padding: 10px 20px;
+        width: 70%;
+    }
+}
+
+@media (min-width: 50px) and (max-width: 800px) {
+    .main_login {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .form_3 {
+        padding: 10px 20px;
+        width: 90%;
     }
     .label_rememberMe_block {
         margin-right: 20px;

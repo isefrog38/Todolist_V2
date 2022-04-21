@@ -40,7 +40,7 @@ export const AddItemForm = React.memo(function ({disabled, addItem, color}: AddI
     return (
         <div className={s.add_item_form_main_block}>
             <TextField
-                style={{margin: "10px"}}
+                style={{margin: "10px", width: "100%"}}
                 disabled={disabled}
                 variant="outlined"
                 error={!!error}

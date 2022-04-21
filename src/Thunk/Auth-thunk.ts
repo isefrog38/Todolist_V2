@@ -41,6 +41,9 @@ export const LoginTC = (values: {email: string, password: string, rememberMe: bo
             let {login, email, id} = responseAuthMe.data;
             dispatch(setAuthUserDataAC({id, email, login, isAuth: true}))
         }
+        else {
+            handleServerAppError(response, dispatch);
+        }
     }
     catch (error) {
         if (error instanceof Error) {

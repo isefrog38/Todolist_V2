@@ -40,11 +40,14 @@ export const SmallApp = AuthRedirect(() => {
             <div className="App">
 
                 {/*Tools*/}
-                <div className="progress_bar_padding">{status === 'loading' && <ProgressBar/>}</div>
+                <div className="progress_bar_padding">
+                    {status === 'loading' && <ProgressBar/>}
+                </div>
                 <Snackbars typeError={'error'}/>
+                {/*End Tools*/}
 
                 <div className={"MainContainer"}>
-                    <Grid container style={{width: "100%", padding: '40px'}}>
+                    <Grid container style={{width: "100%", padding: '20px'}}>
                         <Grid container spacing={7}>
                             {
                                 todolists.map(tl => {
@@ -52,11 +55,7 @@ export const SmallApp = AuthRedirect(() => {
 
                                     return <Grid item key={tl.id}>
                                         <Paper elevation={3}
-                                               style={{
-                                                   padding: '20px',
-                                                   borderRadius: "10px",
-                                                   backgroundColor: "#ffffffa6"
-                                               }}>
+                                               style={{ padding: '20px', borderRadius: "10px", backgroundColor: "#ffffffa6" }}>
                                             <Fade cascade>
                                                 <Todolist
                                                     id={tl.id}

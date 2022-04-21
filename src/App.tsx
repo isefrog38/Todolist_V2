@@ -22,11 +22,13 @@ export const App = () => {
     return  (
         <>
             <Routes>
+                {/* Standard value */}
                 <Route path={"/"} element={ <Navigate to={'/app'}/> } />
-                <Route path={"/login"} element={ <LoginPage/> } />                      {/* LOGIN */}
-                <Route path={"/app"} element={ <SmallApp/> } />                        {/* APP  */}
-                <Route path={"/404"} element={ <h1>404 Page not found</h1> } />
                 <Route path={"*"} element={ <Navigate to={"/404"}/> } />
+
+                <Route path={"/login"} element={ <LoginPage/> } />
+                <Route path={"/app"} element={ <SmallApp/> } />
+                <Route path={"/404"} element={ <h1>404 Page not found</h1> } />
             </Routes>
         </>
     )

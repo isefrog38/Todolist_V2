@@ -1,4 +1,5 @@
 .add_item_form_main_block {
     display: flex;
+    justify-content: space-between;
     width: 100%;
 }
