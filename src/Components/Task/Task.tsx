@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Checkbox from '@mui/material/Checkbox';
 import {TaskStatuses} from '../../api/todolists-api'
 import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
+import {Fade} from "react-awesome-reveal";
 
 type TaskPropsType = {
     task: TaskTypeWithStatusEntity
@@ -26,18 +27,22 @@ export const Task = React.memo((props: TaskPropsType) => {
         props.changeTaskTitle(props.task.id, newValue, props.todolistId)
     }, [props.task.id, props.todolistId]);
 
-    const disabled = props.task.entityTaskStatus === 'loading' ;
+    const disabled = props.task.entityTaskStatus === 'loading';
 
-    return <div key={props.task.id} className={props.task.status === TaskStatuses.Completed ? s.is_done : ''}>
-        <Checkbox
-            checked={props.task.status === TaskStatuses.Completed}
-            color="secondary"
-            onChange={onChangeHandler}
-        />
+    return (
+        <Fade cascade>
+            <div className={props.task.status === TaskStatuses.Completed ? s.is_done : ''}>
+                <Checkbox
+                    checked={props.task.status === TaskStatuses.Completed}
+                    color="secondary"
+                    onChange={onChangeHandler}
+                />
 
-        <EditableSpan disabled={disabled} value={props.task.title} onChange={onTitleChangeHandler}/>
-        <IconButton onClick={onClickHandler} disabled={disabled}>
-            <Delete/>
-        </IconButton>
-    </div>
+                <EditableSpan disabled={disabled} value={props.task.title} onChange={onTitleChangeHandler}/>
+                <IconButton onClick={onClickHandler} disabled={disabled}>
+                    <Delete/>
+                </IconButton>
+            </div>
+        </Fade>
+    )
 })

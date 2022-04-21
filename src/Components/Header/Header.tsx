@@ -1,5 +1,5 @@
 import React from 'react';
-import '../AppIsAuth/SmallApp.css';
+import '../SmallApp/SmallApp.css';
 import Toolbar from "@mui/material/Toolbar";
 import {AddItemForm} from "../AddItemForm/AddItemForm";
 import {Button, Typography} from "@mui/material";
@@ -15,7 +15,7 @@ type HeaderType = {
 
 export const Header = ({ status, login, onClickHandler, addTodolist }: HeaderType) => {
     return (
-        <AppBar position={"static"} color={"secondary"} style={{height: "100px"}}>
+        <AppBar position={"fixed"} color={"secondary"} style={{height: "100px"}}>
             <Toolbar>
                 <div className={"AddItem"}>
                     <AddItemForm addItem={addTodolist} color={"info"} disabled={status === 'loading' && true}/>

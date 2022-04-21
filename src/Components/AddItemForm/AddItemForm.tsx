@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import s from "./AddItemForm.module.css";
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
@@ -37,8 +38,9 @@ export const AddItemForm = React.memo(function ({disabled, addItem, color}: AddI
     }
 
     return (
-        <div style={{display: "flex"}}>
+        <div className={s.add_item_form_main_block}>
             <TextField
+                style={{margin: "10px"}}
                 disabled={disabled}
                 variant="outlined"
                 error={!!error}

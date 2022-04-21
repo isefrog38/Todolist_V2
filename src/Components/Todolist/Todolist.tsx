@@ -13,6 +13,7 @@ import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
 import {createTaskTC, getTasksTC, removeTaskTC, updateTaskTC} from "../../Thunk/Task-thunk";
 import {RequestStatusType} from "../../Redux-Store/App-reducer";
 import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
+import TransitionGroup from "react-transition-group/TransitionGroup";
 
 type PropsType = {
     id: string
@@ -68,29 +69,32 @@ export const Todolist = memo(function (props: PropsType) {
         <div className={s.main_paper_div}>
 
             <h3 className={s.block_name_and_delete}>
-                <EditableSpan disabled={props.entityStatus === 'loading'} value={props.title} onChange={changeTodolistTitle}/>
+                <EditableSpan disabled={props.entityStatus === 'loading'} value={props.title}
+                              onChange={changeTodolistTitle}/>
                 <IconButton size={"large"} onClick={removeTodolist} disabled={props.entityStatus === 'loading'}>
                     <Delete/>
                 </IconButton>
             </h3>
 
-            <div className={s.add_item_form}>
-                <AddItemForm addItem={addTask} color={'secondary'} disabled={props.entityStatus === 'loading'}/>
+            <AddItemForm addItem={addTask} color={'secondary'} disabled={props.entityStatus === 'loading'}/>
+
+            <div className={s.tasks_block}>
+                <TransitionGroup appear={true} enter={true} exit={true}>
+
+
+                    {
+                        tasksForTodolist.map(t => <Task key={t.id}
+                                                        task={t}
+                                                        todolistId={props.id}
+                                                        removeTask={removeTask}
+                                                        changeTaskTitle={changeTaskTitle}
+                                                        changeTaskStatus={changeStatus}
+                        />)
+                    }
+                </TransitionGroup>
             </div>
-            <div>
-                {
-                    tasksForTodolist.map(t => <Task key={t.id}
-                                                    task={t}
-                                                    todolistId={props.id}
-                                                    removeTask={removeTask}
-                                                    changeTaskTitle={changeTaskTitle}
-                                                    changeTaskStatus={changeStatus}
-                    />)
-                }
-            </div>
-            <div style={{paddingTop: '10px'}}>
-                <Buttons todolistId={props.id} filterBS={props.filter}/>
-            </div>
+
+            <Buttons todolistId={props.id} filterBS={props.filter}/>
         </div>
     )
 })

@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import s from "./Buttons.module.css";
 import {useDispatch} from "react-redux";
 import {CleanButton} from "./Button";
 import {changeTodolistFilterAC, FilterValuesType} from "../../Redux-Store/todolists-reducer";
@@ -18,7 +19,7 @@ export const Buttons = ({filterBS, todolistId}: ButtonsType) => {
 
 
     return (
-        <div>
+        <div className={s.buttons_block}>
             <CleanButton
                 activeButton={filterBS}
                 onClickHandler={onAllClickHandler}

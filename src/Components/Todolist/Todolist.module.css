@@ -14,3 +14,16 @@
 .add_item_form {
     margin: 20px 50px;
 }
+
+.tasks_block {
+    display: flex;
+}
+
+@media (max-width: 1000px) {
+    .main_paper_div {
+        width: 100%;
+    }
+    .add_item_form {
+        margin: 10px;
+    }
+}

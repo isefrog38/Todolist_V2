@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SmallApp/SmallApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/FunctionUtils/Redirect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppIsAuth/SmallApp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallApp/SmallApp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppIsAuth/SmallApp.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignIn/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux-Store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -43,8 +61,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Social_network" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="D:\PAVEL\My_Lessons\Todolist_V2\node_modules\typescript\lib" />
@@ -89,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +141,10 @@
       <workItem from="1649781762869" duration="12808000" />
       <workItem from="1649838121293" duration="10384000" />
       <workItem from="1649948437419" duration="10089000" />
-      <workItem from="1650016342048" duration="6803000" />
+      <workItem from="1650016342048" duration="6878000" />
+      <workItem from="1650270326316" duration="1354000" />
+      <workItem from="1650350933852" duration="601000" />
+      <workItem from="1650549236886" duration="8709000" />
     </task>
     <servers />
   </component>

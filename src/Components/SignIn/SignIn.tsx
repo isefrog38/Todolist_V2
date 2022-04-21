@@ -3,6 +3,7 @@ import s from "./SignIn.module.css";
 import {useDispatch} from "react-redux";
 import {useFormik} from "formik";
 import {LoginTC} from "../../Thunk/Auth-thunk";
+import {RedirectToApp} from "../../Utils/FunctionUtils/Redirect";
 
 type SignInType = {};
 type FormikErrorType = {
@@ -127,7 +128,7 @@ const SignIn = (props: SignInType) => {
 };
 
 
-export default SignIn;
+export default RedirectToApp(SignIn);
 
 
 const MustContainItem = (props: any) => {
