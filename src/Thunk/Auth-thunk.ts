@@ -34,6 +34,8 @@ export const LogOutTC = (): AppThunk => async dispatch => {
 
 export const LoginTC = (values: {email: string, password: string, rememberMe: boolean, captcha: boolean}): AppThunk => async dispatch => {
 
+    dispatch(setIsFetchingAC(true));
+
     try {
         const response = await AuthAPI.Login(values.email, values.password, values.rememberMe,values.captcha);
         const responseAuthMe = await AuthAPI.AuthUser();
@@ -49,5 +51,8 @@ export const LoginTC = (values: {email: string, password: string, rememberMe: bo
         if (error instanceof Error) {
             handleServerNetworkError(error, dispatch);
         }
+    }
+    finally {
+        dispatch(setIsFetchingAC(false));
     }
 }
