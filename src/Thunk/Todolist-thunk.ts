@@ -9,6 +9,31 @@ import {
 import {setAppStatusAC} from "../Redux-Store/App-reducer";
 import {handleServerAppError, handleServerNetworkError} from "../Utils/Error-urils";
 import {Dispatch} from "redux";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import {AppRootStateType} from "../Redux-Store/store";
+
+// export const getTodolistsTC = createAsyncThunk<unknown, undefined, {
+//     dispatch: Dispatch
+//     state: AppRootStateType
+// }>(
+//     'get/Todolists',
+//     async (_, {dispatch}) => {
+//
+//         dispatch(setAppStatusAC({status: 'loading'}));
+//
+//         try {
+//             const response = await todolistsAPI.getTodolists();
+//             if (response.status === 200) {
+//                 dispatch(setTodolistsAC({todolists: response.data}));
+//                 dispatch(setAppStatusAC({status: 'succeeded'}));
+//             }
+//         } catch (error) {
+//             if (error instanceof Error) {
+//                 handleServerNetworkError(error, dispatch);
+//             }
+//         }
+//     }
+// );
 
 export const getTodolistsTC = () => async (dispatch: Dispatch) => {
 
@@ -30,14 +55,14 @@ export const getTodolistsTC = () => async (dispatch: Dispatch) => {
 export const updateTodolistTC = (todolistId: string, title: string) => async (dispatch: Dispatch) => {
 
     dispatch(setAppStatusAC({status: 'loading'}));
-    dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'loading'} ));
+    dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'loading'}));
 
     try {
         const response = await todolistsAPI.updateTodolist(todolistId, title);
         if (response.data.resultCode === 0) {
             dispatch(changeTodolistTitleAC({todolistId, title}));
             dispatch(setAppStatusAC({status: 'succeeded'}));
-            dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'succeeded'} ));
+            dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'succeeded'}));
         } else {
             handleServerAppError(response.data, dispatch);
             dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'failed'}));
@@ -52,7 +77,7 @@ export const updateTodolistTC = (todolistId: string, title: string) => async (di
 
 export const removeTodolistTC = (todolistId: string) => async (dispatch: Dispatch) => {
 
-    dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'loading'} ));
+    dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'loading'}));
     dispatch(setAppStatusAC({status: 'loading'}));
 
     try {
@@ -60,7 +85,7 @@ export const removeTodolistTC = (todolistId: string) => async (dispatch: Dispatc
         if (response.data.resultCode === 0) {
             dispatch(removeTodolistAC({todolistId}));
             dispatch(setAppStatusAC({status: 'succeeded'}));
-            dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'succeeded'} ));
+            dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'succeeded'}));
         } else {
             handleServerAppError(response.data, dispatch);
             dispatch(changeTodolistEntityStatusAC({todolistId, entityStatus: 'failed'}));

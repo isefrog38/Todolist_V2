@@ -1,6 +1,6 @@
 import {TodolistType, UpdateTaskModelType} from '../api/todolists-api';
 import {RequestStatusType} from "./App-reducer";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {TaskTypeWithStatusEntity} from "../Types/TaskType";
 import {addTodolistAC, removeTodolistAC, setTodolistsAC} from "./todolists-reducer";
 
@@ -19,28 +19,30 @@ const TaskSlice = createSlice({
     name: "TaskSlice",
     initialState: initialState,
     reducers: {
-        setTasksAC(state, action: PayloadAction<{ tasks: Array<TaskTypeWithStatusEntity>, todolistId: string }>) {
-            state[action.payload.todolistId] = action.payload.tasks;
-        },
-        removeTaskAC(state, action: PayloadAction<{ taskId: string, todolistId: string }>) {
-            state[action.payload.todolistId].filter(t => t.id !== action.payload.taskId);
-        },
-        addTaskAC(state, action: PayloadAction<{ todolistId: string, task: TaskTypeWithStatusEntity }>) {
-            state[action.payload.todolistId] = [action.payload.task, ...state[action.payload.todolistId]];
-        },
-        updateTaskAC(state, action: PayloadAction<{ taskId: string, todolistId: string, model: UpdateTaskModelType }>) {
-            state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {...t, ...action.payload.model} : t);
-        },
-        changeTaskEntityStatusAC(state, action: PayloadAction<{ todolistId: string, taskId: string, entityStatus: RequestStatusType }>) {
-            state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {
-                ...t,
-                entityTaskStatus: action.payload.entityStatus
-            } : t)
-        },
+        // setTasksAC(state, action: PayloadAction<{ tasks: Array<TaskTypeWithStatusEntity>, todolistId: string }>) {
+        //     state[action.payload.todolistId] = action.payload.tasks;
+        // },
+        // removeTaskAC(state, action: PayloadAction<{ taskId: string, todolistId: string }>) {
+        //     state[action.payload.todolistId].filter(t => t.id !== action.payload.taskId);
+        // },
+        // addTaskAC(state, action: PayloadAction<{ todolistId: string, task: TaskTypeWithStatusEntity }>) {
+        //     state[action.payload.todolistId] = [action.payload.task, ...state[action.payload.todolistId]];
+        // },
+        // updateTaskAC(state, action: PayloadAction<{ taskId: string, todolistId: string, model: UpdateTaskModelType }>) {
+        //     state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {...t, ...action.payload.model} : t);
+        // },
+        // changeTaskEntityStatusAC(state, action: PayloadAction<{ todolistId: string, taskId: string, entityStatus: RequestStatusType }>) {
+        //     state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {
+        //         ...t,
+        //         entityTaskStatus: action.payload.entityStatus
+        //     } : t)
+        // },
     },
     extraReducers: (builder) => {
+
+        /*TODOLIST AC*/
         builder.addCase(setTodolistsAC, (state, action) => {
-            action.payload.todolists.forEach((tl) => state[tl.id] = []);
+            return action.payload.todolists.forEach((tl) => state[tl.id] = []);
         });
         builder.addCase(removeTodolistAC, (state, action) => {
             let copyState = state;
@@ -50,10 +52,33 @@ const TaskSlice = createSlice({
         builder.addCase(addTodolistAC, (state, action) => {
             state[action.payload.todolistId] = [];
         });
+
+
+        /*TASK ActionCreators*/
+        builder.addCase(setTasksAC, (state, action: PayloadAction<{ tasks: Array<TaskTypeWithStatusEntity>, todolistId: string }>) => {
+            state[action.payload.todolistId] = action.payload.tasks;
+        });
+        builder.addCase(removeTaskAC, (state, action: PayloadAction<{ taskId: string, todolistId: string }>) => {
+            state[action.payload.todolistId].filter(t => t.id !== action.payload.taskId);
+        });
+        builder.addCase(addTaskAC, (state, action: PayloadAction<{ todolistId: string, task: TaskTypeWithStatusEntity }>) => {
+            state[action.payload.todolistId] = [action.payload.task, ...state[action.payload.todolistId]];
+        });
+        builder.addCase(updateTaskAC, (state, action: PayloadAction<{ taskId: string, todolistId: string, model: UpdateTaskModelType }>) => {
+            state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {...t, ...action.payload.model} : t);
+        });
+        builder.addCase(changeTaskEntityStatusAC, (state, action: PayloadAction<{ todolistId: string, taskId: string, entityStatus: RequestStatusType }>) => {
+            state[action.payload.todolistId].map(t => t.id === action.payload.taskId ? {...t, entityTaskStatus: action.payload.entityStatus} : t);
+        });
     },
 });
 
 
+
 export const tasksReducer = TaskSlice.reducer;
 
-export const {setTasksAC, updateTaskAC, addTaskAC, changeTaskEntityStatusAC, removeTaskAC} = TaskSlice.actions;
+export const setTasksAC = createAction<{ tasks: Array<TaskTypeWithStatusEntity>, todolistId: string }>("SET_TASKS");
+export const removeTaskAC = createAction<{ taskId: string, todolistId: string }>("REMOVE_TASK");
+export const addTaskAC = createAction<{ todolistId: string, task: TaskTypeWithStatusEntity }>("ADD_TASK");
+export const updateTaskAC = createAction<{ taskId: string, todolistId: string, model: UpdateTaskModelType }>("UPDATE_TASK");
+export const changeTaskEntityStatusAC = createAction<{ todolistId: string, taskId: string, entityStatus: RequestStatusType }>("CHANGE_TASK_ENTITY_STATUS");

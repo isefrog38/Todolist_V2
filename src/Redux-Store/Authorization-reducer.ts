@@ -15,23 +15,17 @@ let initialState: initialStateAuthorizationType = {
     isAuth: false,
 };
 
-export const setAuthUserDataAC = createAction<DataUserAuthType>('AUTH_ME')
-
 const AuthSlice = createSlice({
     name: "AuthSlice",
     initialState: initialState,
-    reducers: {
-        /*setAuthUserDataAC(state, action: PayloadAction<DataUserAuthType>) {
-            console.log('auth data', action)
-            state = {...action.payload};
-        },*/
-    },
+    reducers: {},
     extraReducers: (builder) => {
-        builder
-            .addCase(setAuthUserDataAC, (state, {payload}: PayloadAction<DataUserAuthType>) => {
+        builder.addCase(setAuthUserDataAC, (state, {payload}: PayloadAction<DataUserAuthType>) => {
             return payload
-        })
+        });
     },
 });
 
 export const AuthorizationReducer = AuthSlice.reducer;
+
+export const setAuthUserDataAC = createAction<DataUserAuthType>('AUTH_ME');

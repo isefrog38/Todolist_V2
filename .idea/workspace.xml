@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Types/TaskType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Auth-Api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SmallApp/SmallApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallApp/SmallApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SnackBar/SnackBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SnackBar/SnackBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux-Store/App-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/App-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Todolists.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/Authorization-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux-Store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" afterDir="false" />
@@ -22,10 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Auth-thunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Todolist-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Types/AythTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types/AythTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Error-urils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Error-urils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/FunctionUtils/Redirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/FunctionUtils/Redirect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +136,8 @@
       <workItem from="1650270326316" duration="1354000" />
       <workItem from="1650350933852" duration="601000" />
       <workItem from="1650549236886" duration="16744000" />
-      <workItem from="1650625509569" duration="14245000" />
+      <workItem from="1650625509569" duration="14339000" />
+      <workItem from="1650665830959" duration="3803000" />
     </task>
     <servers />
   </component>

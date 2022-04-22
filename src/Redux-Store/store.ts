@@ -24,7 +24,7 @@ export const store = configureStore({
         AppReducer,
         tasksReducer
     },
-   // middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunkMiddleware),
+    middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunkMiddleware),
 })
 
 // определить автоматически тип всего объекта состояния

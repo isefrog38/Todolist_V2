@@ -11,10 +11,7 @@ import {AppInitialStateType} from "./Redux-Store/App-reducer";
 export const App = () => {
 
     const { isFetching } = useAppSelector<AppInitialStateType>(state => state.AppReducer);
-    const isAuth = useAppSelector<any>(state => state.AuthorizationReducer.isAuth);
     const dispatch = useDispatch();
-
-    console.log(isAuth)
 
     useEffect(() => {
         dispatch(AuthMeTC());
