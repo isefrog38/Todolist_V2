@@ -1,12 +1,44 @@
-import {AppThunk} from "../Redux-Store/store";
-import {setAuthUserDataAC, setIsFetchingAC} from "../Redux-Store/Authorization-reducer";
-import {AuthAPI} from "../api/todolists-api";
+import {setAuthUserDataAC} from "../Redux-Store/Authorization-reducer";
 import {handleServerAppError, handleServerNetworkError} from "../Utils/Error-urils";
-import {changeTaskEntityStatusAC} from "../Redux-Store/tasks-reducer";
+import {Dispatch} from "redux";
+import {setIsFetchingAC} from "../Redux-Store/App-reducer";
+import {AuthAPI} from "../api/Auth-Api";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import {AppRootStateType} from "../Redux-Store/store";
 
-export const AuthMeTC = (): AppThunk => async dispatch => {
+export const AuthMeTC = createAsyncThunk<
+    // Return type of the payload creator
+    unknown,
+    undefined,
+    {
+        dispatch: Dispatch
+        state: AppRootStateType
+    }
+    >(
+    'Auth/meTC',
+    async(_,{dispatch}) => {
+        dispatch(setIsFetchingAC({isFetching: true}));
 
-    dispatch(setIsFetchingAC(true));
+        try {
+            const response = await AuthAPI.AuthUser()
+            if (response.resultCode === 0) {
+                let {login, email, id} = response.data
+                const payload = {id, email, login, isAuth: true}
+                dispatch(setAuthUserDataAC(payload))
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                handleServerNetworkError(error, dispatch);
+            }
+        } finally {
+            dispatch(setIsFetchingAC({isFetching: false}));
+        }
+    }
+)
+
+/*export const AuthMeTC = () => async (dispatch: Dispatch) => {
+
+    dispatch(setIsFetchingAC({isFetching: true}));
 
     try {
         const response = await AuthAPI.AuthUser()
@@ -21,20 +53,20 @@ export const AuthMeTC = (): AppThunk => async dispatch => {
         }
     }
     finally {
-        dispatch(setIsFetchingAC(false));
+        dispatch(setIsFetchingAC({isFetching: false}));
     }
-}
+}*/
 
-export const LogOutTC = (): AppThunk => async dispatch => {
+export const LogOutTC = () => async (dispatch: Dispatch) => {
     const response = await AuthAPI.LogOut()
     if (response.resultCode === 0) {
         dispatch(setAuthUserDataAC({id: null, email: null, login: null, isAuth: false}))
     }
 }
 
-export const LoginTC = (values: {email: string, password: string, rememberMe: boolean, captcha: boolean}): AppThunk => async dispatch => {
+export const LoginTC = (values: {email: string, password: string, rememberMe: boolean, captcha: boolean}) => async (dispatch: Dispatch) => {
 
-    dispatch(setIsFetchingAC(true));
+    dispatch(setIsFetchingAC({isFetching: true}));
 
     try {
         const response = await AuthAPI.Login(values.email, values.password, values.rememberMe,values.captcha);
@@ -53,6 +85,6 @@ export const LoginTC = (values: {email: string, password: string, rememberMe: bo
         }
     }
     finally {
-        dispatch(setIsFetchingAC(false));
+        dispatch(setIsFetchingAC({isFetching: false}));
     }
 }

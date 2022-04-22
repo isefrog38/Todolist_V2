@@ -4,9 +4,9 @@ import {EditableSpan} from '../RenameSpanFunc/EditableSpan'
 import {Delete} from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import Checkbox from '@mui/material/Checkbox';
-import {TaskStatuses} from '../../api/todolists-api'
-import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
+import {TaskStatuses} from '../../api/todolists-api';
 import {Fade} from "react-awesome-reveal";
+import {TaskTypeWithStatusEntity} from "../../Types/TaskType";
 
 type TaskPropsType = {
     task: TaskTypeWithStatusEntity

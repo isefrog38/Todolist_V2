@@ -13,9 +13,9 @@ export const Buttons = ({filterBS, todolistId}: ButtonsType) => {
 
     const dispatch = useDispatch();
 
-    const onAllClickHandler = useCallback(() => dispatch(changeTodolistFilterAC(todolistId, 'All')),[dispatch, todolistId]);
-    const onActiveClickHandler = useCallback(() => dispatch(changeTodolistFilterAC(todolistId, 'Active')),[dispatch, todolistId]);
-    const onCompletedClickHandler = useCallback(() => dispatch(changeTodolistFilterAC(todolistId, 'Completed')),[dispatch, todolistId]);
+    const onAllClickHandler = useCallback(() => dispatch(changeTodolistFilterAC({todolistId, filter: 'All'})),[dispatch, todolistId]);
+    const onActiveClickHandler = useCallback(() => dispatch(changeTodolistFilterAC({todolistId, filter: 'Active'})),[dispatch, todolistId]);
+    const onCompletedClickHandler = useCallback(() => dispatch(changeTodolistFilterAC({todolistId, filter: 'Completed'})),[dispatch, todolistId]);
 
 
     return (

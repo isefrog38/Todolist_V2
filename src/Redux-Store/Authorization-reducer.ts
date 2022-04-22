@@ -1,48 +1,37 @@
-const SET_USER_DATA = "SET_USER_DATA",
-    SET_FETCHING = "SET_FETCHING";
+import {createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {DataUserAuthType} from "../Types/AythTypes";
+import {AuthMeTC} from "../Thunk/Auth-thunk";
 
-export type AuthActionType = ReturnType<typeof setIsFetchingAC> | ReturnType<typeof setAuthUserDataAC>;
-type DataType = {
-    id: number | null
-    email: string | null
-    login: string | null
-    isAuth: boolean
-};
 export type initialStateAuthorizationType = {
     id: number | null
     email: string | null
     login: string | null
-    isFetching: boolean
     isAuth: boolean
 };
-let initialStateAuthorization: initialStateAuthorizationType = {
+let initialState: initialStateAuthorizationType = {
     id: null,
     login: null,
     email: null,
-    isFetching: false,
     isAuth: false,
 };
 
-export const AuthorizationReducer = (state = initialStateAuthorization, action: AuthActionType): initialStateAuthorizationType => {
-    switch (action.type) {
-        case SET_USER_DATA :
-            return {
-                ...state,
-                ...action.payload
-            }
-            case SET_FETCHING :
-            return {
-                ...state,
-                isFetching: action.isFetching
-            }
-        default:
-            return state
-    }
-}
+export const setAuthUserDataAC = createAction<DataUserAuthType>('AUTH_ME')
 
-export const setAuthUserDataAC = (payload: DataType) => {
-    return {type: SET_USER_DATA, payload} as const
-}
-export const setIsFetchingAC = (isFetching: boolean) => {
-    return {type: SET_FETCHING, isFetching} as const
-}
+const AuthSlice = createSlice({
+    name: "AuthSlice",
+    initialState: initialState,
+    reducers: {
+        /*setAuthUserDataAC(state, action: PayloadAction<DataUserAuthType>) {
+            console.log('auth data', action)
+            state = {...action.payload};
+        },*/
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(setAuthUserDataAC, (state, {payload}: PayloadAction<DataUserAuthType>) => {
+            return payload
+        })
+    },
+});
+
+export const AuthorizationReducer = AuthSlice.reducer;

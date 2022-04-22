@@ -1,32 +1,35 @@
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed';
-export type SetAppErrorMessageActionType = ReturnType <typeof setAppErrorMessageAC>;
-export type SetAppStatusActionType = ReturnType<typeof setAppStatusAC>;
-export type AppActionsType =
-    | SetAppErrorMessageActionType
-    | SetAppStatusActionType;
+
 export type AppInitialStateType = {
     status: RequestStatusType
     error: null | string
+    isFetching: boolean
 };
-
-const APP_SET_STATUS = "APP_SET_STATUS",
-      SET_APP_ERROR = "SET_APP_ERROR";
 
 const initialState: AppInitialStateType = {
     status: 'succeeded',
     error: null,
+    isFetching: true,
 }
 
-export const AppReducer = (state = initialState, action: AppActionsType): AppInitialStateType => {
-    switch (action.type) {
-        case APP_SET_STATUS:
-            return {...state, status: action.status}
-        case SET_APP_ERROR:
-            return {...state, error: action.error}
-        default:
-            return state
-    }
-}
+const AppSlice = createSlice({
+    name: "AppSlice",
+    initialState: initialState,
+    reducers: {
+        setAppStatusAC(state, action: PayloadAction<{ status: RequestStatusType }>) {
+            state.status = action.payload.status;
+        },
+        setAppErrorMessageAC(state, action: PayloadAction<{ error: null | string }>) {
+            state.error = action.payload.error;
+        },
+        setIsFetchingAC(state, action: PayloadAction<{ isFetching: boolean }>) {
+            state.isFetching = action.payload.isFetching;
+        },
+    },
+});
 
-export const setAppStatusAC = (status: RequestStatusType) => ({type: APP_SET_STATUS, status} as const );
-export const setAppErrorMessageAC = (error: string | null) => ({type: SET_APP_ERROR, error} as const );
+export const AppReducer = AppSlice.reducer;
+
+export const {setIsFetchingAC, setAppStatusAC, setAppErrorMessageAC} = AppSlice.actions;

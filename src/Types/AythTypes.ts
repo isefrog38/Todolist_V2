@@ -23,3 +23,10 @@ export type AuthRequestType = {
     rememberMe: boolean
     captcha: boolean
 }
+
+export type DataUserAuthType = {
+    id: number | null
+    email: string | null
+    login: string | null
+    isAuth: boolean
+};

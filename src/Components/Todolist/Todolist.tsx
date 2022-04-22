@@ -1,18 +1,18 @@
-import React, {memo, useCallback, useEffect} from 'react'
+import React, {memo, useCallback, useEffect} from 'react';
 import s from "./Todolist.module.css";
-import {AddItemForm} from '../AddItemForm/AddItemForm'
-import {EditableSpan} from '../RenameSpanFunc/EditableSpan'
+import {AddItemForm} from '../AddItemForm/AddItemForm';
+import {EditableSpan} from '../RenameSpanFunc/EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import {Delete} from '@mui/icons-material';
-import {Task} from '../Task/Task'
-import {TaskStatuses} from '../../api/todolists-api'
-import {FilterValuesType} from '../../Redux-Store/todolists-reducer'
+import {Task} from '../Task/Task';
+import {TaskStatuses} from '../../api/todolists-api';
+import {FilterValuesType} from '../../Redux-Store/todolists-reducer';
 import {Buttons} from "../Buttons/Buttons";
 import {useDispatch} from "react-redux";
 import {removeTodolistTC, updateTodolistTC} from "../../Thunk/Todolist-thunk";
 import {createTaskTC, getTasksTC, removeTaskTC, updateTaskTC} from "../../Thunk/Task-thunk";
 import {RequestStatusType} from "../../Redux-Store/App-reducer";
-import {TaskTypeWithStatusEntity} from "../../Redux-Store/tasks-reducer";
+import {TaskTypeWithStatusEntity} from "../../Types/TaskType";
 
 type PropsType = {
     id: string

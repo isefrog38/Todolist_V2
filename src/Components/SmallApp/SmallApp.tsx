@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from "../../Redux-Store/store";
-import {TodolistDomainType} from "../../Redux-Store/todolists-reducer";
+import {InitialStateTodolistDomainType} from "../../Redux-Store/todolists-reducer";
 import {TasksStateType} from "../../Redux-Store/tasks-reducer";
 import {initialStateAuthorizationType} from "../../Redux-Store/Authorization-reducer";
 import {AppInitialStateType} from "../../Redux-Store/App-reducer";
@@ -19,8 +19,8 @@ import {AuthRedirect} from "../../Utils/FunctionUtils/Redirect";
 
 export const SmallApp = AuthRedirect(() => {
 
-    const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists);
-    const tasks = useAppSelector<TasksStateType>(state => state.tasks);
+    const todolists = useAppSelector<Array<InitialStateTodolistDomainType>>(state => state.todolistsReducer);
+    const tasks = useAppSelector<TasksStateType>(state => state.tasksReducer);
     const {login} = useAppSelector<initialStateAuthorizationType>(state => state.AuthorizationReducer);
     const {status} = useAppSelector<AppInitialStateType>(state => state.AppReducer);
     const dispatch = useDispatch();
