@@ -11,7 +11,6 @@ import {RequestStatusType, setAppStatusAC} from "../Redux-Store/App-reducer";
 import {changeTodolistEntityStatusAC} from "../Redux-Store/todolists-reducer";
 import {handleServerAppError, handleServerNetworkError} from "../Utils/Error-urils";
 import {Dispatch} from "redux";
-import {createAsyncThunk} from "@reduxjs/toolkit";
 
 export const getTasksTC = (todolistId: string) => async (dispatch: Dispatch) => {
 
