@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Types/TodolistTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +134,8 @@
       <workItem from="1650665830959" duration="3858000" />
       <workItem from="1650701716145" duration="5330000" />
       <workItem from="1650743240996" duration="139000" />
-      <workItem from="1651181431133" duration="1442000" />
+      <workItem from="1651181431133" duration="1473000" />
+      <workItem from="1651221329728" duration="535000" />
     </task>
     <servers />
   </component>
