@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3285edce-2ba4-4789-88ed-323afcea5c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Types/TodolistTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Todolist/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux-Store/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux-Store/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thunk/Task-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Types/TaskType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types/TaskType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Error-urils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Error-urils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Auth-Api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Auth-Api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Social_network" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="D:\PAVEL\My_Lessons\Todolist_V2\node_modules\typescript\lib" />
@@ -135,7 +139,10 @@
       <workItem from="1650701716145" duration="5330000" />
       <workItem from="1650743240996" duration="139000" />
       <workItem from="1651181431133" duration="1473000" />
-      <workItem from="1651221329728" duration="535000" />
+      <workItem from="1651221329728" duration="1162000" />
+      <workItem from="1651308414639" duration="519000" />
+      <workItem from="1651497194599" duration="819000" />
+      <workItem from="1651498956693" duration="1141000" />
     </task>
     <servers />
   </component>

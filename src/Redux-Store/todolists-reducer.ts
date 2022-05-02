@@ -1,6 +1,6 @@
-import {TodolistType} from '../api/todolists-api';
 import {RequestStatusType} from "./App-reducer";
 import {createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {TodolistType} from "../Types/TodolistTypes";
 
 export type FilterValuesType = 'All' | 'Active' | 'Completed';
 export type InitialStateTodolistDomainType = TodolistType & {

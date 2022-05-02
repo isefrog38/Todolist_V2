@@ -1,8 +1,8 @@
-import {TodolistType, UpdateTaskModelType} from '../api/todolists-api';
 import {RequestStatusType} from "./App-reducer";
-import {createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {TaskTypeWithStatusEntity} from "../Types/TaskType";
 import {addTodolistAC, removeTodolistAC, setTodolistsAC} from "./todolists-reducer";
+import {UpdateTaskModelType} from "../Types/TodolistTypes";
 
 export type TasksStateType = {
     [key: string]: Array<TaskTypeWithStatusEntity>
